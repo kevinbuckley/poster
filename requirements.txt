@@ -4,5 +4,5 @@ Jinja2==3.*
 polygon-api-client==1.*
 google-generativeai==0.7.*
 requests==2.*
-
+openai>=1.40
 
