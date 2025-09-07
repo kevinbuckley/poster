@@ -13,6 +13,7 @@ import tweepy
 from polygon import RESTClient
 import google.generativeai as genai
 from jinja2 import Template
+import requests
 
 # -------------------------------------------------------------------
 # Setup and Config
@@ -81,20 +82,51 @@ def pct_change(symbol: str) -> float:
 
 
 def get_news() -> str:
-    """Fetch the top headline from Polygon (general market news)."""
+    """Fetch the last 5 general-market headlines from Polygon and join them."""
     if MOCK_MODE:
         return "Stocks steady as investors assess jobs data and Fed outlook."
+    # Prefer HTTP Reference News API for broad headlines
     try:
-        # Get general market news without specifying a ticker
-        news = poly.list_news(limit=1)
-        for n in news:
-            # Some versions expose .title, others may use .headline
-            return getattr(n, "title", getattr(n, "headline", "No major news today."))
-        return "No major news today."
+        titles = fetch_latest_news_titles_http(limit=5)
+        if titles:
+            return "; ".join(titles)
     except Exception as exc:
-        logging.warning("Failed to fetch news from Polygon (%s). Using default headline.", exc)
-        return "No major news today."
+        logging.warning("HTTP news fetch failed (%s)", exc)
+    # Fallback to SDK if available
+    try:
+        if poly is not None and hasattr(poly, "list_news"):
+            news = poly.list_news(limit=5)
+            for n in news:
+                title = getattr(n, "title", getattr(n, "headline", None))
+                if title:
+                    return title
+    except Exception as exc:
+        logging.warning("SDK list_news failed (%s)", exc)
+    return "No major news today."
 
+
+def fetch_latest_news_titles_http(query: str | None = None, limit: int = 5) -> list[str]:
+    """Fetch latest general-market news titles via Polygon HTTP Reference News API."""
+    api_key = os.environ["POLYGON_API_KEY"]
+    params = {
+        "limit": str(limit),
+        "order": "desc",
+        "sort": "published_utc",
+        "apiKey": api_key,
+    }
+    if query:
+        params["query"] = query
+    url = "https://api.polygon.io/v2/reference/news"
+    resp = requests.get(url, params=params, timeout=10)
+    resp.raise_for_status()
+    data = resp.json()
+    results = data.get("results") or []
+    titles: list[str] = []
+    for item in results:
+        title = item.get("title")
+        if title:
+            titles.append(title)
+    return titles
 
 # -------------------------------------------------------------------
 # Prompt Handling
