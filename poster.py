@@ -34,7 +34,7 @@ if not MOCK_MODE:
     poly = RESTClient(api_key=POLY_KEY)
 
     genai.configure(api_key=GEMINI_KEY)
-    gemini_model = genai.GenerativeModel("gemini-2.5-flash-lite")
+    gemini_model = genai.GenerativeModel("gemini-2.5-flash")
 
     auth = tweepy.OAuth1UserHandler(
         os.environ["X_CONSUMER_KEY"],
@@ -81,11 +81,12 @@ def pct_change(symbol: str) -> float:
 
 
 def get_news() -> str:
-    """Fetch the top headline from Polygon."""
+    """Fetch the top headline from Polygon (general market news)."""
     if MOCK_MODE:
         return "Stocks steady as investors assess jobs data and Fed outlook."
     try:
-        news = poly.list_news(ticker="SPY", limit=1)
+        # Get general market news without specifying a ticker
+        news = poly.list_news(limit=1)
         for n in news:
             # Some versions expose .title, others may use .headline
             return getattr(n, "title", getattr(n, "headline", "No major news today."))
@@ -124,7 +125,12 @@ def generate_tweet(prompt: str) -> str:
     if MOCK_MODE:
         return clamp_tweet(prompt)
     try:
-        resp = gemini_model.generate_content(prompt)
+        resp = gemini_model.generate_content(
+            prompt,
+            generation_config={
+                "temperature": 0.5,
+            },
+        ) 
         text = getattr(resp, "text", "") or ""
         return clamp_tweet(text)
     except Exception as exc:
