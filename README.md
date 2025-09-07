@@ -12,7 +12,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
-
+ 
 2) Configure environment
 ```bash
 cp example.env .env
