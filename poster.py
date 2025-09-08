@@ -104,11 +104,8 @@ def print_market_wrap(market_wrap: NewsTopicWrap):
 
 
 def generate_market_wrap(topic: str):
-    if DRY_RUN:
-        market_wrap = NewsTopicWrap(tweet="Markets steady; awaiting live API to generate final tweet.", summary="", citations=[])
-    else:
-        generator = Generator()
-        market_wrap : NewsTopicWrap = generator.generate_summary(topic)
+    generator = Generator()
+    market_wrap : NewsTopicWrap = generator.generate_summary(topic)
 
     return market_wrap
 
