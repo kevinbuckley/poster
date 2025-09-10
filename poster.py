@@ -12,6 +12,7 @@ from generator import NewsTopicWrap, Generator
 load_dotenv()
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 DRY_RUN = os.getenv("DRY_RUN", "0") == "1"
+MAX_TWEET_LEN = 280
 
 
 # Topic definitions
@@ -19,6 +20,11 @@ TOPICS = {
     "us-markets": """US Markets. Focus on major indices (S&P 500, Nasdaq, Dow) and primary drivers. Give a concise, objective 
 summary of the topic using web search. Look at recent news and events. Look at the week ahead and predict the most important events.""",
     
+    "us-markets-weekly-wrap": """US Markets Weekly Wrap. Summarize the last 5 trading days: approximate weekly performance for the S&P 500, Nasdaq, and Dow; notable sector leaders/laggards; key macro data and earnings that moved markets; noteworthy breadth/volatility. Use web search to verify facts. Be concise and objective.""",
+    
+    "us-markets-next-week-events": """US Markets Next Week. Preview the coming week’s main catalysts: economic releases (e.g., CPI, PPI, jobs, PMIs, Fed/FOMC), major earnings/IPO/events, and other potential movers. Include consensus/expectations when available. Use web search for the next 7 calendar days. Be concise and objective.""",
+    "us-options": """SPY Market. Proivde an options trading 
+    recommendation for SPY with specific strike prices and dates.""",
     "world-markets": """World Markets. Focus on international markets, major global indices, currency movements, and geopolitical events 
 affecting global markets. Include European, Asian, and emerging market performance. Look at recent news and events.""",
     
@@ -105,11 +111,26 @@ def print_market_wrap(market_wrap: NewsTopicWrap):
 
 def generate_market_wrap(topic: str):
     generator = Generator()
-    market_wrap : NewsTopicWrap = generator.generate_summary(topic)
-
+    attempts = 0
+    market_wrap: NewsTopicWrap | None = None
+    while attempts < 5:
+        market_wrap = generator.generate_summary(topic)
+        tweet_text = market_wrap.tweet or ""
+        if len(tweet_text) <= MAX_TWEET_LEN:
+            break
+        attempts += 1
+        logging.info(
+            "Tweet too long (%d chars > %d). Regenerating (%d/5)…",
+            len(tweet_text),
+            MAX_TWEET_LEN,
+            attempts,
+        )
+    # Final safety: if still too long after retries, clamp to fit
+    if market_wrap and len(market_wrap.tweet or "") > MAX_TWEET_LEN:
+        market_wrap.tweet = clamp_tweet(market_wrap.tweet, MAX_TWEET_LEN)
     return market_wrap
 
-
+# good default call is python poster.py us-markets
 def main():
     parser = argparse.ArgumentParser(description="Generate and post tweets about various topics")
     parser.add_argument(
