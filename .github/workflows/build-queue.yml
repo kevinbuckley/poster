@@ -1,0 +1,37 @@
+name: build-queue
+on:
+  schedule:
+    - cron: "0 14 * * 1-5"   # 10:00 AM ET weekdays (14:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    environment: POLYGON_API_KEY
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: workflow-state
+          persist-credentials: true
+      - name: Merge main into workflow-state
+        run: |
+          git fetch origin main
+          git checkout -B workflow-state
+          git merge --strategy-option theirs origin/main -m "Merge main into workflow-state"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Build queue JSON
+        run: python queue_build.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Commit and push queue.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add queue.json
+          git commit -m "Update queue.json"
+          git push origin workflow-state
+
+

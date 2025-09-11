@@ -1,0 +1,39 @@
+name: post-from-queue
+on:
+  schedule:
+    - cron: "2 14 * * 1-5"   # 10:02 AM ET
+    - cron: "5 14 * * 1-5"   # 10:05 AM ET
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    environment: POLYGON_API_KEY
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: workflow-state
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Post next tweet from queue (primary)
+        run: |
+          python queue_post.py primary || echo "Nothing to post"
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+          X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          DRY_RUN: ${{ vars.DRY_RUN }}
+      - name: Commit and push updated queue
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add queue.json || true
+          git commit -m "Pop queue.json" || echo "No changes to commit"
+          git push origin workflow-state
+
+
