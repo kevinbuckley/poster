@@ -12,15 +12,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: workflow-state
+          fetch-depth: 0
           persist-credentials: true
+      - name: Checkout workflow-state branch
+        shell: bash
+        run: |
+          set -e
+          git fetch origin workflow-state || true
+          if git show-ref --verify --quiet refs/remotes/origin/workflow-state; then
+            git checkout -B workflow-state origin/workflow-state
+          else
+            # If the branch doesn't exist yet, create it locally so pushes succeed later
+            git checkout -B workflow-state
+          fi
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
       - name: Post next tweet from queue (primary)
         run: |
-          python queue_post.py primary || echo "Nothing to post"
+          python queue_post.py --account-prefix "" || echo "Nothing to post"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
