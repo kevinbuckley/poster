@@ -1,18 +1,6 @@
 {
   "queue": [
     {
-      "topic": "US Markets",
-      "tweet": "Nasdaq posts a record-close as AI names lead, while the S&P 500 and Dow stall. Key drivers: AI optimism, solid earnings, and bets on a Fed rate cut next week. Week ahead: Fed meeting Sept 16–17, CPI and payrolls data, and big tech results.",
-      "summary": "Nasdaq notched a record-close today, while the S&P 500 and Dow paused slightly. AI-driven strength helped the Nasdaq, with tech names in focus. Investors are weighing earnings signals, inflation trends, and the pace of monetary policy changes. In the background, expectations of a rate cut are shaping sentiment.\n\nLooking ahead, the coming week centers on the Federal Reserve’s Sept 16–17 policy meeting, with CPI and payrolls data on deck and key tech earnings due, all likely to guide the near-term path for the major indices.\n\nIf the Fed signals a credible path toward easing, markets could extend the rally; if the data disappoints, volatility could re-emerge. Stay tuned for how rate-cut expectations interact with earnings momentum.",
-      "citations": [
-        "https://www.reuters.com/business/nasdaq-notches-record-high-close-traders-look-fed-meeting-2025-09-12/",
-        "https://www.federalreserve.gov/newsevents/2025-september.htm",
-        "https://www.reuters.com/business/morgan-stanley-expects-fed-cut-rates-all-three-meetings-2025-2025-09-12/",
-        "https://www.cnbc.com/2025/09/04/stock-market-today-live-updates-.html"
-      ],
-      "created_at": "2025-09-12T23:12:38.241013+00:00"
-    },
-    {
       "topic": "SPY Market",
       "tweet": "Option idea for SPY: Sep 19, 2025 bull call spread. Buy SPY 660C and sell SPY 670C with Sep 19 expiry. Rationale: Fed meeting and rate-cut expectations could lift markets; defined risk, limited upside.",
       "summary": "Overview: A Sep 19, 2025 SPY options spread is proposed, using a near-the-money long call and a slightly higher short call to create a defined-risk bet on upside.\n\nRationale: With the Fed meeting on the horizon (Sept 16–17) and expectations for rate cuts, a disciplined call spread can capture upside if equities rally, while capping losses to the net premium.\n\nRisks: Time decay and a potential pullback beyond the strike are possible; ensure liquidity and sizing fit your risk tolerance.",
@@ -25,5 +13,17 @@
       "created_at": "2025-09-12T23:12:38.241013+00:00"
     }
   ],
-  "generated_at": "2025-09-12T23:12:38.241013+00:00"
+  "last_posted": {
+    "topic": "US Markets",
+    "tweet": "Nasdaq posts a record-close as AI names lead, while the S&P 500 and Dow stall. Key drivers: AI optimism, solid earnings, and bets on a Fed rate cut next week. Week ahead: Fed meeting Sept 16–17, CPI and payrolls data, and big tech results.",
+    "summary": "Nasdaq notched a record-close today, while the S&P 500 and Dow paused slightly. AI-driven strength helped the Nasdaq, with tech names in focus. Investors are weighing earnings signals, inflation trends, and the pace of monetary policy changes. In the background, expectations of a rate cut are shaping sentiment.\n\nLooking ahead, the coming week centers on the Federal Reserve’s Sept 16–17 policy meeting, with CPI and payrolls data on deck and key tech earnings due, all likely to guide the near-term path for the major indices.\n\nIf the Fed signals a credible path toward easing, markets could extend the rally; if the data disappoints, volatility could re-emerge. Stay tuned for how rate-cut expectations interact with earnings momentum.",
+    "citations": [
+      "https://www.reuters.com/business/nasdaq-notches-record-high-close-traders-look-fed-meeting-2025-09-12/",
+      "https://www.federalreserve.gov/newsevents/2025-september.htm",
+      "https://www.reuters.com/business/morgan-stanley-expects-fed-cut-rates-all-three-meetings-2025-2025-09-12/",
+      "https://www.cnbc.com/2025/09/04/stock-market-today-live-updates-.html"
+    ],
+    "created_at": "2025-09-12T23:12:38.241013+00:00"
+  },
+  "thread_root_id": "1966641456250319143"
 }
