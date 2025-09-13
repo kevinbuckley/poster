@@ -29,6 +29,12 @@ jobs:
             # If the branch doesn't exist yet, create it locally so pushes succeed later
             git checkout -B workflow-state
           fi
+      - name: Sync workflow-state with main
+        shell: bash
+        run: |
+          set -e
+          git fetch origin main
+          git merge --no-edit -X theirs origin/main || true
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
