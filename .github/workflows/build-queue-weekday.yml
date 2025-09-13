@@ -1,4 +1,4 @@
-name: build-queue
+name: build-queue-weekday
 on:
   schedule:
     - cron: "0 14 * * 1-5"   # 10:00 AM ET weekdays (14:00 UTC)
@@ -31,7 +31,7 @@ jobs:
           python-version: "3.11"
       - run: pip install -r requirements.txt
       - name: Build queue JSON
-        run: python queue_build.py
+        run: python queue_build.py --topics "us-markets,us-options"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       - name: Commit and push queue.json

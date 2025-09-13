@@ -1,9 +1,7 @@
-name: post-from-queue
+name: build-queue-weekly-wrap
 on:
   schedule:
-    - cron: "4 14 * * 1-5"   # Weekdays 10:04 AM ET
-    - cron: "9 14 * * 1-5"   # Weekdays 10:09 AM ET
-    - cron: "5 14 * * 6,0"   # Sat/Sun 10:05 AM ET
+    - cron: "0 14 * * 6"   # Saturdays 10:00 AM ET (14:00 UTC)
   workflow_dispatch:
 
 permissions:
@@ -18,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true
-      - name: Checkout workflow-state branch
+      - name: Prepare workflow-state branch
         shell: bash
         run: |
           set -e
@@ -26,7 +24,6 @@ jobs:
           if git show-ref --verify --quiet refs/remotes/origin/workflow-state; then
             git checkout -B workflow-state origin/workflow-state
           else
-            # If the branch doesn't exist yet, create it locally so pushes succeed later
             git checkout -B workflow-state
           fi
       - name: Sync workflow-state with main
@@ -39,22 +36,17 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - name: Post next tweet from queue (primary)
-        run: |
-          python queue_post.py --account-prefix "" || echo "Nothing to post"
+      - name: Build queue JSON
+        run: python queue_build.py --topics "us-markets-weekly-wrap"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
-          X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
-          DRY_RUN: ${{ vars.DRY_RUN }}
-      - name: Commit and push updated queue
+      - name: Commit and push queue.json
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add queue.json || true
-          git commit -m "Pop queue.json" || echo "No changes to commit"
+          git add queue.json
+          git commit -m "Update queue.json"
           git push origin workflow-state
+
 
 
