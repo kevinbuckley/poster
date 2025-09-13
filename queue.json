@@ -2,26 +2,27 @@
   "queue": [
     {
       "topic": "US Markets",
-      "tweet": "US equities closed mixed as Nasdaq hit a fresh high on AI optimism, while the S&P 500 and Dow paused. Week ahead: Fed meets Sept 16–17 with rate-cut odds rising; Nvidia/mega-cap earnings; and inflation/payroll data in focus.",
-      "summary": "Nasdaq posts a fresh high on AI leadership.\n\nBroad market remains mixed as rotation and mega-cap earnings influence sentiment.\n\nWeek ahead features the FOMC decision, Nvidia earnings, and key inflation data that could tilt policy expectations.",
+      "tweet": "US markets drift higher as AI names power gains; S&P 500 and Nasdaq hover near records, while the Dow lags on energy/financials. Week ahead centers on the FOMC meeting (Sep 16–17); inflation data and earnings guidance will shape sentiment.",
+      "summary": "Recent action shows AI-led momentum lifting the S&P 500 and Nasdaq toward record levels, with the Dow showing more muted gains. This leadership from mega-cap tech and AI plays remains a primary driver. \n\nWhat to watch: rate paths, inflation signals, and ongoing earnings guidance will steer risk sentiment as markets reassess valuations. \n\nWeek ahead: the Fed meets Sep 16–17, with the SEP projections and policy tone closely watched; data on inflation and consumer demand will influence expectations for policy and markets.",
       "citations": [
+        "https://www.federalreserve.gov/newsevents/2025-september.htm",
         "https://www.investopedia.com/next-fed-meeting-september-11808225",
-        "https://www.reuters.com/business/nasdaq-notches-record-high-close-traders-look-fed-meeting-2025-09-12/",
-        "https://www.nasdaq.com/articles/us-stocks-close-mixed-ahead-next-weeks-fed-meeting"
+        "https://www.thomsoninvestmentgroup.com/economic-calendar-september-2025",
+        "https://www.investors.com/news/sp500-tesla-nvidia-stock-market-highs/"
       ],
-      "created_at": "2025-09-13T14:41:04.829775+00:00"
+      "created_at": "2025-09-13T14:52:04.735859+00:00"
     },
     {
       "topic": "SPY Market",
-      "tweet": "Trade idea: Bull call spread on SPY — buy 650 strike call and sell 670 strike call, expiring Sept 19, 2025. If SPY closes above 670, max profit; if not, limited risk equal to net premium. Near-term setup supported by SPY trading near 647.",
-      "summary": "SPY sits in the mid-600s as policy expectations and earnings set the tone.\n\nThe proposed play is a bullish call spread: long 650 call, short 670 call, with Sep 19, 2025 expiry.\n\nThis structure offers defined risk with upside if price moves higher; monitor liquidity and costs.",
+      "tweet": "SPY options idea: bull call spread expiring Sep 19, 2025. Buy 650 strike call, sell 660 strike call. Net debit ~$3.31. Break-even ~$653.31. Max profit ~$6.69 if SPY ends at/above 660.",
+      "summary": "Idea: use a defined-risk bull call spread on SPY with near-term expiry to capture a rally toward the 660 area. \n\nTrade details: long 650 call + short 660 call, net debit about 3.31; break-even around 653.31; max profit about 6.69 if SPY closes at/above 660 at expiration. \n\nRisks and guidance: if SPY stays below 650, the maximum loss is the net debit; liquidity and spreads should be checked in the direct option chain and adjusted as needed based on price action and IV.",
       "citations": [
-        "https://www.pxquant.com/company/SPY",
-        "https://www.ainvest.com/news/timing-2025-calendar-options-traders-2412/",
-        "https://marketchameleon.com/articles/b/2025/9/8/bullish-on-SPY-you-might-want-to-consider-this-credit-put-spread-expiring-in-15-days"
+        "https://stockscan.io/stocks/SPY/option-chain",
+        "https://fintel.io/soc/us/spy",
+        "https://www.marketchameleon.com/articles/b/2025/9/3/spy-sep-03-25-643-call-360k-volume-9-percent-spike"
       ],
-      "created_at": "2025-09-13T14:41:04.829775+00:00"
+      "created_at": "2025-09-13T14:52:04.735859+00:00"
     }
   ],
-  "generated_at": "2025-09-13T14:41:04.829775+00:00"
+  "generated_at": "2025-09-13T14:52:04.735859+00:00"
 }
