@@ -1,16 +1,27 @@
 {
-  "queue": [],
-  "last_posted": {
-    "topic": "SPY Market",
-    "tweet": "Option idea for SPY: Sep 19, 2025 bull call spread. Buy SPY 660C and sell SPY 670C with Sep 19 expiry. Rationale: Fed meeting and rate-cut expectations could lift markets; defined risk, limited upside.",
-    "summary": "Overview: A Sep 19, 2025 SPY options spread is proposed, using a near-the-money long call and a slightly higher short call to create a defined-risk bet on upside.\n\nRationale: With the Fed meeting on the horizon (Sept 16–17) and expectations for rate cuts, a disciplined call spread can capture upside if equities rally, while capping losses to the net premium.\n\nRisks: Time decay and a potential pullback beyond the strike are possible; ensure liquidity and sizing fit your risk tolerance.",
-    "citations": [
-      "https://www.reuters.com/business/nasdaq-notches-record-high-close-traders-look-fed-meeting-2025-09-12/",
-      "https://www.federalreserve.gov/newsevents/2025-september.htm",
-      "https://www.investing.com/etfs/spdr-s-p-500-options",
-      "https://stockscan.io/stocks/SPY/option-chain"
-    ],
-    "created_at": "2025-09-12T23:12:38.241013+00:00"
-  },
-  "thread_root_id": "1966641456250319143"
+  "queue": [
+    {
+      "topic": "US Markets",
+      "tweet": "US equities closed mixed as Nasdaq hit a fresh high on AI optimism, while the S&P 500 and Dow paused. Week ahead: Fed meets Sept 16–17 with rate-cut odds rising; Nvidia/mega-cap earnings; and inflation/payroll data in focus.",
+      "summary": "Nasdaq posts a fresh high on AI leadership.\n\nBroad market remains mixed as rotation and mega-cap earnings influence sentiment.\n\nWeek ahead features the FOMC decision, Nvidia earnings, and key inflation data that could tilt policy expectations.",
+      "citations": [
+        "https://www.investopedia.com/next-fed-meeting-september-11808225",
+        "https://www.reuters.com/business/nasdaq-notches-record-high-close-traders-look-fed-meeting-2025-09-12/",
+        "https://www.nasdaq.com/articles/us-stocks-close-mixed-ahead-next-weeks-fed-meeting"
+      ],
+      "created_at": "2025-09-13T14:41:04.829775+00:00"
+    },
+    {
+      "topic": "SPY Market",
+      "tweet": "Trade idea: Bull call spread on SPY — buy 650 strike call and sell 670 strike call, expiring Sept 19, 2025. If SPY closes above 670, max profit; if not, limited risk equal to net premium. Near-term setup supported by SPY trading near 647.",
+      "summary": "SPY sits in the mid-600s as policy expectations and earnings set the tone.\n\nThe proposed play is a bullish call spread: long 650 call, short 670 call, with Sep 19, 2025 expiry.\n\nThis structure offers defined risk with upside if price moves higher; monitor liquidity and costs.",
+      "citations": [
+        "https://www.pxquant.com/company/SPY",
+        "https://www.ainvest.com/news/timing-2025-calendar-options-traders-2412/",
+        "https://marketchameleon.com/articles/b/2025/9/8/bullish-on-SPY-you-might-want-to-consider-this-credit-put-spread-expiring-in-15-days"
+      ],
+      "created_at": "2025-09-13T14:41:04.829775+00:00"
+    }
+  ],
+  "generated_at": "2025-09-13T14:41:04.829775+00:00"
 }
