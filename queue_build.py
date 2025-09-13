@@ -2,9 +2,11 @@ import json
 import os
 from datetime import datetime, timezone
 from typing import List, Dict, Any
+import argparse
 
 from dotenv import load_dotenv
 from openai import OpenAI
+from poster import TOPICS
 
 
 def generate_queue(topics: List[str]) -> Dict[str, Any]:
@@ -81,13 +83,28 @@ def write_queue_file(queue: Dict[str, Any], path: str = "queue.json") -> None:
         json.dump(queue, f, ensure_ascii=False, indent=2)
 
 
+def _parse_topic_keys(raw: str) -> List[str]:
+    parts = [p.strip() for p in (raw or "").replace(",", " ").split() if p.strip()]
+    return parts
+
+
 def main() -> None:
-    # Hardcoded initial topics; extend as needed
-    topics = [
-        "US Markets. Focus on major indices (S&P 500, Nasdaq, Dow) and primary drivers. Give a concise, objective summary of the topic using web search. Look at recent news and events. Look at the week ahead and predict the most important events.",
-        "SPY Market. Proivde an options trading recommendation for SPY with specific strike prices and dates.",
-    ]
-    queue_data = generate_queue(topics)
+    parser = argparse.ArgumentParser(description="Build tweet queue from topic keys")
+    parser.add_argument(
+        "--topics",
+        help="Space- or comma-separated list of topic KEYS from poster.TOPICS (e.g. 'us-markets,us-options')",
+        default=os.getenv("TOPIC_KEYS", "us-markets,us-options"),
+    )
+    args = parser.parse_args()
+
+    topic_keys = _parse_topic_keys(args.topics)
+    # Map keys to descriptions from poster.TOPICS
+    missing = [k for k in topic_keys if k not in TOPICS]
+    if missing:
+        raise SystemExit(f"Unknown topic keys: {', '.join(missing)}")
+    topic_descriptions = [TOPICS[k] for k in topic_keys]
+
+    queue_data = generate_queue(topic_descriptions)
     write_queue_file(queue_data, "queue.json")
     print("Queue written to queue.json with", len(queue_data.get("queue", [])), "items")
 
