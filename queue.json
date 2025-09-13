@@ -1,16 +1,15 @@
 {
-  "queue": [
-    {
-      "topic": "US Markets Weekly Wrap",
-      "tweet": "US markets wrap a solid week: S&P 500 +1.6%, Nasdaq +2.0%, Dow +1.0% (week ended Sep 12, 2025). Tech led with Tesla and Microsoft among top movers; AI names boosted breadth. Fed-cut bets persisted as inflation cooled and jobs data softened.",
-      "summary": "What happened this week: major indexes closed higher, with the Nasdaq leading at about +2.0%, the S&P 500 around +1.6%, and the Dow near +1.0% for the week ending Sep 12, 2025. \n\nWhat moved markets: tech strength dominated, led by large-cap names such as Tesla and Microsoft; AI-related momentum supported breadth across indices. Sector leadership skewed toward Information Technology and related high-growth names. \n\nWhat it means going forward: investors priced in a potential Fed rate cut next week as inflation cooled and job data showed signs of softness, keeping the market's up/upbeat narrative intact amid earnings season.",
-      "citations": [
-        "https://www.reuters.com/business/nasdaq-notches-record-high-close-traders-look-fed-meeting-2025-09-12/",
-        "https://www.cnbc.com/2025/09/11/stock-market-today-live-updates.html",
-        "https://www.lpl.com/research/blog/weekly-market-performance-september-12-2025.html"
-      ],
-      "created_at": "2025-09-13T15:00:36.340215+00:00"
-    }
-  ],
-  "generated_at": "2025-09-13T15:00:36.340215+00:00"
+  "queue": [],
+  "last_posted": {
+    "topic": "US Markets Weekly Wrap",
+    "tweet": "US markets wrap a solid week: S&P 500 +1.6%, Nasdaq +2.0%, Dow +1.0% (week ended Sep 12, 2025). Tech led with Tesla and Microsoft among top movers; AI names boosted breadth. Fed-cut bets persisted as inflation cooled and jobs data softened.",
+    "summary": "What happened this week: major indexes closed higher, with the Nasdaq leading at about +2.0%, the S&P 500 around +1.6%, and the Dow near +1.0% for the week ending Sep 12, 2025. \n\nWhat moved markets: tech strength dominated, led by large-cap names such as Tesla and Microsoft; AI-related momentum supported breadth across indices. Sector leadership skewed toward Information Technology and related high-growth names. \n\nWhat it means going forward: investors priced in a potential Fed rate cut next week as inflation cooled and job data showed signs of softness, keeping the market's up/upbeat narrative intact amid earnings season.",
+    "citations": [
+      "https://www.reuters.com/business/nasdaq-notches-record-high-close-traders-look-fed-meeting-2025-09-12/",
+      "https://www.cnbc.com/2025/09/11/stock-market-today-live-updates.html",
+      "https://www.lpl.com/research/blog/weekly-market-performance-september-12-2025.html"
+    ],
+    "created_at": "2025-09-13T15:00:36.340215+00:00"
+  },
+  "thread_root_id": "1966882252966522906"
 }
