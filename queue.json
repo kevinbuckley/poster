@@ -1,19 +1,6 @@
 {
   "queue": [
     {
-      "topic": "US Markets",
-      "tweet": "Markets open higher as investors await the Fed decision. Dow ~45,800; S&P ~6,600; Nasdaq ~22,240, led by AI/big tech. Drivers: policy path, inflation data, earnings. Week ahead: Fed guidance, CPI/PPI, and key tech results could move markets.",
-      "summary": "Markets are moving into a Fed-week with major indices near records. Dow around 45,800; S&P near 6,600; Nasdaq around 22,240, led by AI and megacaps. \n\nKey drivers are policy signals, inflation data, and earnings tone. \n\nWeek ahead could see volatility around the Fed decision and data releases.",
-      "citations": [
-        "https://www.reuters.com/business/snapshot-wall-street-opens-higher-fed-meeting-week-begins-tesla-climbs-2025-09-15/",
-        "https://www.cnbc.com/2025/09/07/stock-market-today-live-updates.html",
-        "https://www.cnbc.com/2025/09/04/stock-market-today-live-updates-.html",
-        "https://www.cnbc.com/2025/09/09/stock-market-today-live-updates.html",
-        "https://www.nasdaq.com/articles/stock-market-news-sep-9-2025"
-      ],
-      "created_at": "2025-09-15T14:09:46.175183+00:00"
-    },
-    {
       "topic": "SPY Market",
       "tweet": "SPY idea: Sep 19, 2025 bull call spread. Buy 660 strike call, sell 680 strike call. Net debit small. Pros: defined risk and upside if SPY climbs above 660 by expiry, especially with Fed action and AI earnings in focus.",
       "summary": "Strategy: a defined-risk bull call spread on SPY with Sep 19, 2025 expiry. Buy SPY 660 call, sell SPY 680 call to cap cost.\n\nRationale: upside if SPY moves through 660 by expiration, aided by a potential Fed tilt and AI/computer-technology earnings. Risks: time decay and IV changes.",
@@ -24,5 +11,18 @@
       "created_at": "2025-09-15T14:09:46.175183+00:00"
     }
   ],
-  "generated_at": "2025-09-15T14:09:46.175183+00:00"
+  "last_posted": {
+    "topic": "US Markets",
+    "tweet": "Markets open higher as investors await the Fed decision. Dow ~45,800; S&P ~6,600; Nasdaq ~22,240, led by AI/big tech. Drivers: policy path, inflation data, earnings. Week ahead: Fed guidance, CPI/PPI, and key tech results could move markets.",
+    "summary": "Markets are moving into a Fed-week with major indices near records. Dow around 45,800; S&P near 6,600; Nasdaq around 22,240, led by AI and megacaps. \n\nKey drivers are policy signals, inflation data, and earnings tone. \n\nWeek ahead could see volatility around the Fed decision and data releases.",
+    "citations": [
+      "https://www.reuters.com/business/snapshot-wall-street-opens-higher-fed-meeting-week-begins-tesla-climbs-2025-09-15/",
+      "https://www.cnbc.com/2025/09/07/stock-market-today-live-updates.html",
+      "https://www.cnbc.com/2025/09/04/stock-market-today-live-updates-.html",
+      "https://www.cnbc.com/2025/09/09/stock-market-today-live-updates.html",
+      "https://www.nasdaq.com/articles/stock-market-news-sep-9-2025"
+    ],
+    "created_at": "2025-09-15T14:09:46.175183+00:00"
+  },
+  "thread_root_id": "1967592912931201432"
 }
