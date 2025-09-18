@@ -1,24 +1,12 @@
 {
-  "queue": [
-    {
-      "topic": "SPY Market",
-      "tweet": "SPY trade idea: bull call spread via Sep 19, 2025 expiration — buy 645 Call and sell 660 Call. Aims to capture upside on a likely rate-cut rally with capped risk.",
-      "summary": "Context: Fed is set to ease rates and markets show near-term bullish tilt in SPY options. Strategy: buy Sep 19, 2025 645 calls and sell 660 calls to create a defined-risk spread. Rationale: limited risk with potential upside if SPY rallies into the Fed move.",
-      "citations": [
-        "https://www.investing.com/etfs/spdr-s-p-500-options",
-        "https://www.reuters.com/business/fed-rate-cuts-could-set-stage-broader-us-stock-gains-2025-09-17/"
-      ],
-      "created_at": "2025-09-17T14:09:34.388803+00:00"
-    }
-  ],
+  "queue": [],
   "last_posted": {
-    "topic": "US Markets",
-    "tweet": "US stocks edge higher as the Fed kicks off rate cuts; S&P 500, Nasdaq and Dow hover near records with megacap leadership. Week ahead: CPI and PPI releases, Fed projections, and earnings to set the tone for Q4.",
-    "summary": "Markets have momentum as investors await the Fed's rate-cut cycle. The rally is broadening beyond megacaps, supported by resilient tech earnings and easing rates. A softer labor backdrop and inflation data could extend gains but keep rotations in play. Week ahead focuses on inflation prints, Fed guidance, and key earnings signals.",
+    "topic": "SPY Market",
+    "tweet": "SPY trade idea: bull call spread via Sep 19, 2025 expiration — buy 645 Call and sell 660 Call. Aims to capture upside on a likely rate-cut rally with capped risk.",
+    "summary": "Context: Fed is set to ease rates and markets show near-term bullish tilt in SPY options. Strategy: buy Sep 19, 2025 645 calls and sell 660 calls to create a defined-risk spread. Rationale: limited risk with potential upside if SPY rallies into the Fed move.",
     "citations": [
-      "https://www.reuters.com/business/fed-rate-cuts-could-set-stage-broader-us-stock-gains-2025-09-17/",
-      "https://www.investing.com/news/stock-market-news/dow-jones-nasdaq-sp-500-weekly-preview-markets-eye-fed-view-on-labor-softness-4238551",
-      "https://www.nasdaq.com/articles/stock-market-news-sep-16-2025"
+      "https://www.investing.com/etfs/spdr-s-p-500-options",
+      "https://www.reuters.com/business/fed-rate-cuts-could-set-stage-broader-us-stock-gains-2025-09-17/"
     ],
     "created_at": "2025-09-17T14:09:34.388803+00:00"
   },
