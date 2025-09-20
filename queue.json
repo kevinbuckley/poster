@@ -1,29 +1,16 @@
 {
   "queue": [
     {
-      "topic": "SPY Market",
-      "tweet": "SPY options idea: bullish vertical - buy 670 strike call and sell 690 strike call, expiring Oct 17, 2025. Net debit, capped risk, and upside if SPY moves above the 670-690 area as earnings and rate cuts support markets.",
-      "summary": "The plan uses a bull call spread on SPY with 670/690 strikes and Oct 17, 2025 expiry to capture upside with limited risk. Rationale: rate-cut optimism and resilient earnings could lift markets. Risks include premium outlay and IV spikes; monitor expiry dynamics.",
+      "topic": "US Markets Weekly Wrap",
+      "tweet": "US stocks wrapped a solid week (Sept 15–19, 2025): S&P 500 up about 1.0–1.2%, Nasdaq around 2%, Dow around 1%. Tech and consumer discretionary led; financials and energy lagged. Fed rate-cut expectations and strong earnings helped breadth; volatility cooled amid calmer sessions.",
+      "summary": "Week snapshot: Major indices finished higher for the period, with the S&P 500 up roughly 1.0–1.2%, Nasdaq about 2%, and the Dow near 1%. \n\nSector pulse: Tech and consumer discretionary led gains, while financials and energy underperformed.\n\nDrivers and breadth: Fed rate-cut expectations and solid earnings news supported a broad advance; volatility eased after earlier jitters, with breadth remaining favorable.",
       "citations": [
-        "https://www.reuters.com/business/sp-500-nasdaq-futures-hit-record-highs-after-fed-cuts-rates-intel-soars-2025-09-18/",
-        "https://www.cbsnews.com/news/federal-reserve-fomc-meeting-today-rate-cut-september-2025-powell-impact/",
-        "https://www.reuters.com/markets/us/september-fed-rate-cut-done-deal-least-one-more-follow-by-year-end-poll-2025-09-11/"
+        "https://www.lpl.com/research/blog/weekly-market-performance-september-19-2025.html",
+        "https://apnews.com/article/9fae8459b0263089959da59eadfdf96d",
+        "https://www.reuters.com/business/us-stock-futures-steady-indexes-set-weekly-gains-fedex-up-2025-09-19/"
       ],
-      "created_at": "2025-09-19T14:09:33.836618+00:00"
+      "created_at": "2025-09-20T14:04:17.988853+00:00"
     }
   ],
-  "last_posted": {
-    "topic": "US Markets",
-    "tweet": "US equities held gains into September, with the S&P 500, Nasdaq and Dow near records after the Fed's rate cut and solid tech earnings. Key drivers: AI exposure, demand, and easing labor data. Week ahead: CPI, payrolls, and bank results in focus.",
-    "summary": "The major indices have moved higher as the Fed cut rates in September and tech earnings showed resilience. AI exposure and softer labor data supported gains. In the week ahead, CPI and payrolls data, along with bank earnings, could drive the next moves.",
-    "citations": [
-      "https://www.reuters.com/business/sp-500-nasdaq-futures-hit-record-highs-after-fed-cuts-rates-intel-soars-2025-09-18/",
-      "https://www.cnbc.com/2025/09/08/stock-market-today-live-updates.html",
-      "https://www.cnbc.com/2025/09/03/stock-market-today-live-updates.html",
-      "https://www.cbsnews.com/news/federal-reserve-fomc-meeting-today-rate-cut-september-2025-powell-impact/",
-      "https://www.reuters.com/markets/us/september-fed-rate-cut-done-deal-least-one-more-follow-by-year-end-poll-2025-09-11/"
-    ],
-    "created_at": "2025-09-19T14:09:33.836618+00:00"
-  },
-  "thread_root_id": "1969042368734417196"
+  "generated_at": "2025-09-20T14:04:17.988853+00:00"
 }
