@@ -1,10 +1,4 @@
 name: post-from-queue
-on:
-  schedule:
-    - cron: "4 14 * * 1-5"   # Weekdays 10:04 AM ET
-    - cron: "9 14 * * 1-5"   # Weekdays 10:09 AM ET
-    - cron: "5 14 * * 6,0"   # Sat/Sun 10:05 AM ET
-  workflow_dispatch:
 
 permissions:
   contents: write

@@ -1,8 +1,4 @@
 name: build-queue-weekly-wrap
-on:
-  schedule:
-    - cron: "0 14 * * 6"   # Saturdays 10:00 AM ET (14:00 UTC)
-  workflow_dispatch:
 
 permissions:
   contents: write
